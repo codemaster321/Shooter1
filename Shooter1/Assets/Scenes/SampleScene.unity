@@ -479,6 +479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Submachine Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 1068589115209994, guid: cbd84bb3ecd114d5bb83ba08cc0005c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4606143222593126, guid: cbd84bb3ecd114d5bb83ba08cc0005c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1599,7 +1603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6036185274784586320, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6287279549530001355, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: timeBetweenShots
