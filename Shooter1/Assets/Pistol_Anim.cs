@@ -78,16 +78,17 @@ public class Pistol_Anim : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) )
         {
             anim.SetBool("idle",true);
-            anim.SetBool("run", false);
-            anim.SetBool("move", false);
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            anim.SetBool("idle",false);
-            anim.SetBool("run", true);
+            
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetBool("idle", false);
+
+        }
+
+
+
 
 
     }

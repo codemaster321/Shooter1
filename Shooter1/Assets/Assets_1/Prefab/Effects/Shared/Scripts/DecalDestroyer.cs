@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DecalDestroyer : MonoBehaviour {
 
-	public float lifeTime = 5.0f;
+	public float lifeTime = 1000f;
 
 	private IEnumerator Start()
 	{

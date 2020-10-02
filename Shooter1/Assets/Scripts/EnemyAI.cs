@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] float chaseRange = 10f;
     [SerializeField] float turnSpeed = 5f;
+    Animator anim;
 
    NavMeshAgent navMeshAgent;
 
@@ -20,12 +21,15 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+        anim.SetBool("OnGround", true);
 
     }
 
     public void OnDamageTaken()
     {
         isProvoked = true;
+        
     }
 
 
@@ -61,11 +65,14 @@ public class EnemyAI : MonoBehaviour
     private void AttackTarget()
     {
         Debug.Log("Player being destroyed");
+        anim.SetFloat("Forward", 0.2f);
     }
 
     private void ChaseTarget()
     {
         navMeshAgent.SetDestination(target.position);
+        anim.SetFloat("Forward", 1.2f);
+
     }
 
     void OnDrawGizmosSelected()

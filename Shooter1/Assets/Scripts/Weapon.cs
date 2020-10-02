@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
-   
+    [SerializeField] GameObject HitEffect;
     Animator anim;
 
 
@@ -79,7 +79,18 @@ public class Weapon : MonoBehaviour
 
     private void PlayMuzzleFlash()
     {
-        muzzleFlash.Play();
+        RaycastHit hit;
+        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range) && hit.transform.gameObject.tag=="Building")
+        {
+            CreateHitEffect(hit);
+            
+        }
+    }
+
+    private void CreateHitEffect(RaycastHit hit)
+    {
+        GameObject ob = Instantiate(HitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        
     }
 
     private void ProcessRaycast()
